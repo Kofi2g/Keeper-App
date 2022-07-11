@@ -2,13 +2,29 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
+import notes from "../notes";
 
-export default function App() {
+
+
+function App() {
   return (
-    <>
+    <div>
       <Header />
-      <Note />
+
+    {notes.map((data) => {
+      return ( <Note 
+      key={data.key}
+      title={data.title}
+      content={data.content}
+        
+    />)
+    })}
+
+
+      
       <Footer />
-    </>
+    </div>
   );
 }
+
+export default App;
